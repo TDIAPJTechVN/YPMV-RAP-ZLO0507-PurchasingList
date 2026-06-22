@@ -1,0 +1,4 @@
+@EndUserText.label: 'LO05_07: Service Definition for lo05_07'
+define service ZSR_LO05_07_PList {
+  expose ZC_LO05_07_PLIST as Plist;
+}

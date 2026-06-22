@@ -1,0 +1,34 @@
+{
+  "formatVersion": "2",
+  "header": {
+    "description": "An SAP Fiori application.",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "appType": "ui5",
+    "catalogId": "SAP_TC_UI5_REPO_UIAD",
+    "targetMappingTitle": "Purchasing List"
+  },
+  "ui5AppDetails": {
+    "appId": "lo0507polist"
+  },
+  "navigation": {
+    "targetMappingId": "UI5R_4F46D5C0E44EAC87515FF059C1D6DB634B41DF6F_TM",
+    "semanticObject": "zlo0507",
+    "action": "display",
+    "desktop": true,
+    "tablet": true,
+    "phone": true
+  },
+  "tiles": [
+    {
+      "id": "UI5R_4F46D5C0E44EAC87515FF059C1D6DB634B41DF6F_AL",
+      "tileType": "static",
+      "isDefault": true,
+      "standard": {
+        "title": "Purchasing List"
+      }
+    }
+  ]
+}

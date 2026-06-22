@@ -1,0 +1,382 @@
+@Metadata.layer: #CORE
+@UI: { headerInfo: { typeName: 'Purchasing List',
+                     typeNamePlural: 'Purchasing List',
+                     typeImageUrl: 'sap-icon://add-document',
+                     title: { type: #STANDARD, value: 'PurchaseOrder', label: 'Purchase Order', iconUrl: 'sap-icon://upload' } } }
+annotate entity ZC_LO05_07_PLIST with
+{
+
+
+  //  @UI.facet: [ { id:          '_Detail',
+  //             purpose:         #STANDARD,
+  //             type:            #IDENTIFICATION_REFERENCE,
+  //             label:           'Information Detail',
+  //             position:        10 }
+  //            ]
+
+  //  @Consumption.filter: { mandatory: true, selectionType: #SINGLE, multipleSelections: false, defaultValue: '5730' }
+  //  @UI.lineItem: [{  position: 2, label: 'Product Name' }]
+  //  @UI.selectionField: [{ position: 1 }]
+  //  @EndUserText.label: 'Supplier Invoice'
+  //  SupplierInvoice;
+  //  @Consumption.valueHelpDefinition: [
+  //    { entity: { name: 'I_PurchaseOrderAPI01', element: 'PurchaseOrder' } } ]
+  @UI.selectionField: [{ position: 2 }]
+  @UI.lineItem: [{ position: 2 }]
+  @EndUserText.label: 'Purchase Order'
+  PurchaseOrder;
+
+  @UI: {  lineItem:       [ { position: 1 } ],
+  //          selectionField: [ { position: 2 } ],
+          identification: [ { position: 10 } ] }
+  @EndUserText.label: 'Shop Code'
+  ShopCode;
+
+  @UI: {  lineItem:       [ { position: 3 } ],
+  //          selectionField: [ { position: 2 } ],
+          identification: [ { position: 20 } ] }
+  @EndUserText.label: 'Purchase Order Item'
+  PurchaseOrderItem;
+
+
+  @UI: {  lineItem:       [ { position: 30 } ],
+  //          selectionField: [ { position: 20 } ],
+          identification: [ { position: 30 } ] }
+  @EndUserText.label: 'Order Date'
+  PurchaseOrderDate;
+
+  @UI: {  lineItem:       [ { position: 31 } ],
+  //          selectionField: [ { position: 20 } ],
+          identification: [ { position: 31 } ] }
+  @EndUserText.label: 'Delivery Date (PO)'
+  SchedLineStscDeliveryDate;
+
+  @UI: {  lineItem:       [ { position: 32 } ],
+  //          selectionField: [ { position: 20 } ],
+          identification: [ { position: 32 } ] }
+  @EndUserText.label: 'Payment Terms (PO)'
+  PaymentTerms;
+
+  @UI: {  lineItem:       [ { position: 33 } ],
+  //          selectionField: [ { position: 20 } ],
+          identification: [ { position: 33 } ] }
+  @EndUserText.label: 'Payment Terms Desc.'
+  PaymentTermsName;
+
+  @UI: {  lineItem:       [ { position: 34 } ],
+  //          selectionField: [ { position: 20 } ],
+          identification: [ { position: 34 } ] }
+  @EndUserText.label: 'Account Assignment Category'
+  AccountAssignmentCategory;
+
+  @UI: {  lineItem:       [ { position: 34 } ],
+  //          selectionField: [ { position: 20 } ],
+          identification: [ { position: 34 } ] }
+  @EndUserText.label: 'Account Assignment Category Desc.'
+  AcctAssignmentCategoryName;
+
+  @UI: {  lineItem:       [ { position: 35 } ],
+  //          selectionField: [ { position: 20 } ],
+          identification: [ { position: 35 } ] }
+  @EndUserText.label: 'Our Reference'
+  OurREF;
+  
+  @UI: {  lineItem:       [ { position: 36 } ],
+  //          selectionField: [ { position: 20 } ],
+          identification: [ { position: 36 } ] }
+  @EndUserText.label: 'Your Reference'
+  YourREF;
+  
+  @UI: {  lineItem:       [ { position: 40 } ],
+  //          selectionField: [ { position: 20 } ],
+          identification: [ { position: 40 } ] }
+  @EndUserText.label: 'Classification'
+  MaterialGroup;
+
+  @UI: {  lineItem:       [ { position: 50 } ],
+  //          selectionField: [ { position: 20 } ],
+        identification: [ { position: 50 } ] }
+  @EndUserText.label: 'Classification Desc.'
+  MaterialGroupDescription;
+
+  @UI: {  lineItem:       [ { position: 51 } ],
+  //          selectionField: [ { position: 20 } ],
+        identification: [ { position: 51 } ] }
+  @EndUserText.label: 'External Material Group'
+  ExternalProductGroup;
+
+  @UI: {  lineItem:       [ { position: 52 } ],
+  //          selectionField: [ { position: 20 } ],
+        identification: [ { position: 52 } ] }
+  @EndUserText.label: 'External Material Group Desc.'
+  ExternalProductGroupName;
+  
+  @UI: {  lineItem:       [ { position: 60 } ],
+            selectionField: [ { position: 3 } ],
+        identification: [ { position: 60 } ] }
+  @EndUserText.label: 'Purchase Requisition'
+  PurchaseRequisition;
+
+  @UI: {  lineItem:       [ { position: 70 } ],
+  //            selectionField: [ { position: 20 } ],
+        identification: [ { position: 70 } ] }
+  @EndUserText.label: 'Purchase Requisition Item'
+  PurchaseRequisitionItem;
+
+  @Consumption.valueHelpDefinition: [{ entity:{ name:'I_Supplier_VH',element: 'Supplier' } }]
+  @UI: {  lineItem:       [ { position: 80 } ],
+            selectionField: [ { position: 5 } ],
+      identification: [ { position: 80 } ] }
+  @EndUserText.label: 'Supplier'
+  Supplier;
+
+  @UI: {  lineItem:       [ { position: 90 } ],
+  //          selectionField: [ { position: 20 } ],
+      identification: [ { position: 90 } ] }
+  @EndUserText.label: 'Supplier Name'
+  SupplierName;
+
+  @UI: {  lineItem:       [ { position: 100 } ],
+      selectionField: [ { position: 100 } ],
+      identification: [ { position: 100 } ] }
+  @EndUserText.label: 'Product Name'
+  ProductName;
+
+  @UI: {  lineItem:       [ { position: 110 } ],
+  //          selectionField: [ { position: 100 } ],
+      identification: [ { position: 110 } ] }
+  @EndUserText.label: 'Product Vietnamese Name'
+  ProductName_VI;
+
+  @UI: {  lineItem:       [ { position: 120 } ],
+  //          selectionField: [ { position: 100 } ],
+      identification: [ { position: 120 } ] }
+  @EndUserText.label: 'Long Text'
+  ZLONGTEXT;
+
+  @UI: {  lineItem:       [ { position: 130 } ],
+            selectionField: [ { position: 4 } ],
+      identification: [ { position: 130 } ] }
+  @EndUserText.label: 'Product Code'
+  ProductCode;
+
+  @UI: {  lineItem:       [ { position: 140 } ],
+  //          selectionField: [ { position: 100 } ],
+      identification: [ { position: 140 } ] }
+  @EndUserText.label: 'Currency'
+  DocumentCurrency;
+
+  @UI: {  lineItem:       [ { position: 150 } ],
+  //          selectionField: [ { position: 100 } ],
+      identification: [ { position: 150 } ] }
+  @EndUserText.label: 'Unit'
+  PurchaseOrderQuantityUnit;
+
+  @UI: {  lineItem:       [ { position: 160 } ],
+  //          selectionField: [ { position: 100 } ],
+      identification: [ { position: 160 } ] }
+  @EndUserText.label: 'Quantity'
+  OrderQuantity;
+
+
+  @UI: {  lineItem:       [ { position: 170 } ],
+  //          selectionField: [ { position: 100 } ],
+      identification: [ { position: 170 } ] }
+  @EndUserText.label: 'Net Price Amount'
+  NetPriceAmount;
+
+  @UI: {  lineItem:       [ { position: 180 } ],
+  //          selectionField: [ { position: 100 } ],
+      identification: [ { position: 180 } ] }
+  @EndUserText.label: 'Net Amount'
+  NetAmount;
+
+
+  @UI: {  lineItem:       [ { position: 190 } ],
+  //          selectionField: [ { position: 100 } ],
+      identification: [ { position: 190 } ] }
+  @EndUserText.label: 'PIC Order'
+  SupplierRespSalesPersonName;
+
+
+  @UI: {  lineItem:       [ { position: 200 } ],
+  //          selectionField: [ { position: 100 } ],
+      identification: [ { position: 200 } ] }
+  @EndUserText.label: 'PO Issuer'
+  PersonFullName;
+
+  @UI: {  lineItem:       [ { position: 210 } ],
+  //          selectionField: [ { position: 100 } ],
+      identification: [ { position: 210 } ] }
+  @EndUserText.label: 'Requested Delivery Date'
+  RequestedDeliveryDate;
+
+
+  @UI: {  lineItem:       [ { position: 220 } ],
+  //          selectionField: [ { position: 100 } ],
+    identification: [ { position: 220 } ] }
+  @EndUserText.label: 'Actual Date'
+  ActualDate;
+
+  @UI: {  lineItem:       [ { position: 230 } ],
+            selectionField: [ { position: 1 } ],
+      identification: [ { position: 230 } ] }
+  @EndUserText.label: 'Supplier Invoice'
+  SupplierInvoice;
+
+  @UI: {  lineItem:       [ { position: 240 } ],
+  //            selectionField: [ { position: 1 } ],
+      identification: [ { position: 240 } ] }
+  @EndUserText.label: 'Supplier Invoice Item'
+  SupplierInvoiceItem;
+
+  @UI: {  lineItem:       [ { position: 241 } ],
+  //            selectionField: [ { position: 1 } ],
+      identification: [ { position: 241 } ] }
+  @EndUserText.label: 'Invoice Year'
+  InvoiceYear;
+
+  @UI: {  lineItem:       [ { position: 250 } ],
+  //            selectionField: [ { position: 1 } ],
+      identification: [ { position: 250 } ] }
+  @EndUserText.label: 'Invoice Date'
+  InvoiceDate;
+
+  @UI: {  lineItem:       [ { position: 260 } ],
+  //            selectionField: [ { position: 1 } ],
+      identification: [ { position: 260 } ] }
+  @EndUserText.label: 'Bill'
+  BillOfLading;
+
+  @UI: {  lineItem:       [ { position: 270 } ],
+  //            selectionField: [ { position: 1 } ],
+      identification: [ { position: 270 } ] }
+  @EndUserText.label: 'Mode'
+  blankmode;
+
+  @UI: {  lineItem:       [ { position: 280 } ],
+  //            selectionField: [ { position: 1 } ],
+      identification: [ { position: 280 } ] }
+  @EndUserText.label: 'ETD'
+  TrPlanDate;
+
+  @UI: {  lineItem:       [ { position: 290 } ],
+  //            selectionField: [ { position: 1 } ],
+      identification: [ { position: 290 } ] }
+  @EndUserText.label: 'Delivery Date (Inbound)'
+  DeliveryDate;
+
+  @UI: {  lineItem:       [ { position: 300 } ],
+  //            selectionField: [ { position: 1 } ],
+      identification: [ { position: 300 } ] }
+  @EndUserText.label: 'HS Code'
+  HScode;
+
+//  @UI: {  lineItem:       [ { position: 310 } ],
+//  //            selectionField: [ { position: 1 } ],
+//      identification: [ { position: 310 } ] }
+//  @EndUserText.label: 'Amount'
+//  SupplierInvoiceItemAmount;
+//
+//  @UI: {  lineItem:       [ { position: 320 } ],
+//  //            selectionField: [ { position: 1 } ],
+//      identification: [ { position: 320 } ] }
+//  @EndUserText.label: 'Unplanned Delivery Cost'
+//  SuplrInvcItmUnplndDelivCost;
+
+  @UI: {  lineItem:       [ { position: 330 } ],
+  //            selectionField: [ { position: 1 } ],
+      identification: [ { position: 330 } ] }
+  @EndUserText.label: 'Invoice Amount'
+  InvoiceAmount;
+
+//  @UI: {  lineItem:       [ { position: 340 } ],
+//  //            selectionField: [ { position: 1 } ],
+//      identification: [ { position: 340 } ] }
+//  @EndUserText.label: 'Debit/Credit Indicator'
+//  DebitCreditCode;
+
+//  @UI: {  lineItem:       [ { position: 350 } ],
+//  //            selectionField: [ { position: 1 } ],
+//      identification: [ { position: 350 } ] }
+//  @EndUserText.label: 'Invoice Currency'
+//  DocumentCurrency_INV;
+
+  @UI: {  lineItem:       [ { position: 351 } ],
+  //            selectionField: [ { position: 1 } ],
+      identification: [ { position: 351 } ] }
+  @EndUserText.label: 'G/L Account'
+  GLAccount;
+
+  @UI: {  lineItem:       [ { position: 352 } ],
+  //            selectionField: [ { position: 1 } ],
+      identification: [ { position: 352 } ] }
+  @EndUserText.label: 'G/L Account Desc.'
+  GLAccountLongName;
+
+  @UI: {  lineItem:       [ { position: 360 } ],
+  //            selectionField: [ { position: 1 } ],
+      identification: [ { position: 360 } ] }
+  @EndUserText.label: 'WBS Element'
+  Project;
+
+  @UI: {  lineItem:       [ { position: 370 } ],
+      identification: [ { position: 370 } ] }
+  @EndUserText.label: 'WBS Element Name'
+  ProjectDescription;
+
+  @UI: {  lineItem:       [ { position: 380 } ],
+      identification: [ { position: 380 } ] }
+  @EndUserText.label: 'Cost Center'
+  CostCenter;
+
+  @UI: {  lineItem:       [ { position: 390 } ],
+      identification: [ { position: 390 } ] }
+  @EndUserText.label: 'Cost Center Desc'
+  CostCenterDescription;
+
+  @UI: {  lineItem:       [ { position: 400 } ],
+      identification: [ { position: 400 } ] }
+  @EndUserText.label: 'Functional Area'
+  FunctionalArea;
+
+  @UI: {  lineItem:       [ { position: 410 } ],
+      identification: [ { position: 410 } ] }
+  @EndUserText.label: 'Cost Center Desc'
+  FunctionalAreaName;
+
+  @UI: {  lineItem:       [ { position: 420 } ],
+      identification: [ { position: 420 } ] }
+  @EndUserText.label: 'Delivered Quantity'
+  DeliveredQty;
+
+  @UI: {  lineItem:       [ { position: 430 } ],
+      identification: [ { position: 430 } ] }
+  @EndUserText.label: 'Still to be delivered (qty)'
+  Stilldelivered_qty;
+
+  @UI: {  lineItem:       [ { position: 440 } ],
+      identification: [ { position: 440 } ] }
+  @EndUserText.label: 'Still to be delivered (value)'
+  Stilldelivered_value;
+
+  @UI: {  lineItem:       [ { position: 450 } ],
+      identification: [ { position: 450 } ] }
+  @EndUserText.label: 'Invoiced (qty)'
+  QuantityInPurchaseOrderUnit;
+
+  @UI: {  lineItem:       [ { position: 460 } ],
+      identification: [ { position: 460 } ] }
+  @EndUserText.label: 'Still to be invoiced (qty)'
+  StillInvoice_qty;
+
+  @UI: {  lineItem:       [ { position: 470 } ],
+      identification: [ { position: 470 } ] }
+  @EndUserText.label: 'Still to be invoiced (value)'
+  StillInvoice_value;
+ 
+  @UI: {  lineItem:       [ { position: 480 } ],
+      identification: [ { position: 480 } ] }
+  @EndUserText.label: 'Goods Receipt Non-Valuated'
+  GoodsReceiptIsNonValuated;
+}
